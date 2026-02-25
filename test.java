@@ -152,4 +152,14 @@ public static void main(String[] args) {
         }
         return keys;
     }
+    // Shuffle array of keys
+    static void shuffleArray(int[] array) {
+        Random rand = new Random();
+        for (int i = array.length - 1; i > 0; i--) {
+            int index = rand.nextInt(i + 1);
+            int temp = array[index];
+            array[index] = array[i];
+            array[i] = temp;
+        }
+    }
                                   
