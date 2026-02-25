@@ -143,4 +143,13 @@ public static void main(String[] args) {
         }
         System.out.println("Created " + records.length + " sample records for testing");
     }
+      // Generate random keys
+    static int[] generateRandomKeys(int count, int min, int max) {
+        int[] keys = new int[count];
+        Random rand = new Random();
+        for (int i = 0; i < count; i++) {
+            keys[i] = min + rand.nextInt(max - min + 1);
+        }
+        return keys;
+    }
                                   
