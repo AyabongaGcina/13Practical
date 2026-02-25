@@ -134,4 +134,13 @@ public static void main(String[] args) {
             createSampleData();
         }
     }          
+     // Create sample data if file not found
+    static void createSampleData() {
+        records = new Node[1000];
+        for (int i = 0; i < 1000; i++) {
+            int key = 1 + (int)(Math.random() * 32654);
+            records[i] = new Node(key, "Sample data for key " + key);
+        }
+        System.out.println("Created " + records.length + " sample records for testing");
+    }
                                   
