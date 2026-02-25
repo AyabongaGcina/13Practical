@@ -86,4 +86,13 @@ public static void main(String[] args) {
         System.out.println("3. Binary Search Average: " + fourD.format(binaryAveRuntime));
         System.out.println("4. Binary Search Std Dev: " + fourD.format(binaryStdDeviation));
     }
-                        
+    // Node class to hold key and data
+    static class Node {
+        int key;
+        String data;
+        
+        Node(int key, String data) {
+            this.key = key;
+            this.data = data;
+        }
+    }                      
