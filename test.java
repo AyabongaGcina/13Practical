@@ -45,4 +45,28 @@ public static void main(String[] args) {
             finish = System.currentTimeMillis();
             time = (double)(finish - start);
             linearRunTime += time;
-            linearRunTime2 += (time * time);          
+            linearRunTime2 += (time * time);     
+    // Time binary search
+            start = System.currentTimeMillis();
+            for(int key : testKeys) {
+                binarySearch(key);
+            }
+            finish = System.currentTimeMillis();
+            time = (double)(finish - start);
+            binaryRunTime += time;
+            binaryRunTime2 += (time * time);
+            
+            // Shuffle keys for next repetition to avoid caching effects
+            shuffleArray(testKeys);
+        }
+        
+        // Calculate statistics for linear search
+        double linearAveRuntime = linearRunTime / repetitions;
+        double linearStdDeviation = Math.sqrt((linearRunTime2 / repetitions) - 
+                                    (linearAveRuntime * linearAveRuntime));
+        
+        // Calculate statistics for binary search
+        double binaryAveRuntime = binaryRunTime / repetitions;
+        double binaryStdDeviation = Math.sqrt((binaryRunTime2 / repetitions) - 
+                                   (binaryAveRuntime * binaryAveRuntime));
+                      
