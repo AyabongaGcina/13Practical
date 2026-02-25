@@ -162,4 +162,13 @@ public static void main(String[] args) {
             array[i] = temp;
         }
     }
+     // Linear search implementation
+    static String linearSearch(int key) {
+        for (Node node : records) {
+            if (node.key == key) {
+                return node.data;
+            }
+        }
+        return null; // Key not found
+    } 
                                   
