@@ -95,4 +95,30 @@ public static void main(String[] args) {
             this.key = key;
             this.data = data;
         }
-    }                      
+    }    
+// Load data from file
+    static void loadData(String filename) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            ArrayList<Node> nodeList = new ArrayList<>();
+            String line;
+            
+            while ((line = reader.readLine()) != null) {
+                line = line.trim();
+                if (line.isEmpty()) continue;
+                
+                // Assuming format: "key data" or "key: data" or similar
+                String[] parts = line.split("\\s+", 2);
+                if (parts.length >= 2) {
+                    try {
+                        int key = Integer.parseInt(parts[0]);
+                        String data = parts[1];
+                        nodeList.add(new Node(key, data));
+                    } catch (NumberFormatException e) {
+                        // Skip lines that don't start with a number
+                        continue;
+                    }
+                }
+            }
+            reader.close();
+                                  
