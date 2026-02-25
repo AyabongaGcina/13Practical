@@ -121,4 +121,17 @@ public static void main(String[] args) {
                 }
             }
             reader.close();
+    // Convert ArrayList to array
+            records = nodeList.toArray(new Node[0]);
+            System.out.println("Loaded " + records.length + " records from " + filename);
+            
+        } catch (FileNotFoundException e) {
+            System.err.println("Error: File " + filename + " not found!");
+            System.err.println("Creating sample data for testing...");
+            createSampleData();
+        } catch (IOException e) {
+            System.err.println("Error reading file: " + e.getMessage());
+            createSampleData();
+        }
+    }          
                                   
