@@ -171,4 +171,25 @@ public static void main(String[] args) {
         }
         return null; // Key not found
     } 
+     // Binary search implementation
+    static String binarySearch(int key) {
+        int left = 0;
+        int right = sortedRecords.length - 1;
+        
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            
+            if (sortedRecords[mid].key == key) {
+                return sortedRecords[mid].data;
+            }
+            
+            if (sortedRecords[mid].key < key) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        return null; // Key not found
+    }
+}
                                   
