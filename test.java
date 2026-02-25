@@ -69,4 +69,21 @@ public static void main(String[] args) {
         double binaryAveRuntime = binaryRunTime / repetitions;
         double binaryStdDeviation = Math.sqrt((binaryRunTime2 / repetitions) - 
                                    (binaryAveRuntime * binaryAveRuntime));
-                      
+   // Output results
+        System.out.println("\n\n========== SEARCH ALGORITHM PERFORMANCE COMPARISON ==========");
+        System.out.println("Testing with 30 random keys, repeated " + repetitions + " times");
+        System.out.println("------------------------------------------------");
+        System.out.println("LINEAR SEARCH (unsorted data):");
+        System.out.println("  Average time: " + fourD.format(linearAveRuntime) + " ms");
+        System.out.println("  Standard deviation: " + fourD.format(linearStdDeviation) + " ms");
+        System.out.println("\nBINARY SEARCH (sorted data):");
+        System.out.println("  Average time: " + fourD.format(binaryAveRuntime) + " ms");
+        System.out.println("  Standard deviation: " + fourD.format(binaryStdDeviation) + " ms");
+        System.out.println("------------------------------------------------");
+        System.out.println("\nFour required numbers for submission:");
+        System.out.println("1. Linear Search Average: " + fourD.format(linearAveRuntime));
+        System.out.println("2. Linear Search Std Dev: " + fourD.format(linearStdDeviation));
+        System.out.println("3. Binary Search Average: " + fourD.format(binaryAveRuntime));
+        System.out.println("4. Binary Search Std Dev: " + fourD.format(binaryStdDeviation));
+    }
+                        
