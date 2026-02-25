@@ -23,3 +23,9 @@ public static void main(String[] args) {
         double time;
         int n = N;
         int repetition, repetitions = 30;
+ // Load data from file
+        loadData("ulyses.numbered");
+        
+        // Create sorted copy for binary search
+        sortedRecords = records.clone();
+        Arrays.sort(sortedRecords, (a, b) -> Integer.compare(a.key, b.key));      
